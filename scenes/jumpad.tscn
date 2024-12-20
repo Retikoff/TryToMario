@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://2xhdpj7cy5pw"]
+
+[ext_resource type="Script" path="res://scripts/jumpad.gd" id="1_y221i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f4ag"]
+size = Vector2(16, 5)
+
+[node name="Jumpad" type="Area2D"]
+collision_mask = 6
+script = ExtResource("1_y221i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 2.5)
+shape = SubResource("RectangleShape2D_0f4ag")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

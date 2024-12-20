@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddm1xcscmyqmx"]
+
+[ext_resource type="Script" path="res://scripts/coin_block.gd" id="1_pap71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmalv"]
+size = Vector2(16, 5)
+
+[node name="CoinBlock" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_pap71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 2.5)
+shape = SubResource("RectangleShape2D_rmalv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
